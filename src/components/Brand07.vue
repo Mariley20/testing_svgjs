@@ -1,6 +1,6 @@
 <template>
   <div>
-<div id="brando-7"></div>
+    <div id="brando-7"></div>
   </div>
 </template>
 
@@ -8,6 +8,12 @@
 import { SVG } from '@svgdotjs/svg.js'
 
 export default {
+  props: {
+    brandId: { type: String, default: 'xxx' },
+    showPercentage: { type: Number, default: 0 },
+    textData: { type: Object, default: null }
+
+  },
   created () {
     // const draw = SVG().addTo('body').size(500, 300)
     // const rect = draw.rect(100, 100).attr({ fill: '#f06' })
@@ -23,20 +29,30 @@ export default {
     `)
     path1.fill('#a3b7b7')
 
-    const path = draw.path('M 0 333 L 0 500 L 500 500 L 500 166 C 390 140 331 171 234 301 C 133 261 69 282 0 333 Z')
+    const path = draw.path(
+      'M 0 333 L 0 500 L 500 500 L 500 166 C 390 140 331 171 234 301 C 133 261 69 282 0 333 Z'
+    )
     path.fill('#193db0')
 
     // .fill('https://cdn.img42.com/4b6f5e63ac50c95fe147052d8a4db676.jpeg')
-    const ellipse = draw.ellipse(300, 200)
+    const ellipse = draw
+      .ellipse(300, 200)
       .move(100, 156)
-      .fill(draw.image('https://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-14.jpg', function () {
-        this.size(400, 400)
-        this.center(250, 250)
-      }))
+      .fill(
+        draw.image(
+          'https://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-14.jpg',
+          function () {
+            this.size(400, 400)
+            this.center(250, 250)
+          }
+        )
+      )
 
     ellipse.transform({ rotate: -12 })
 
-    const text = draw.text('Lorem ipsum dolor sit amet consectetur.\nCras sodales imperdiet auctor.')
+    const text = draw.text(
+      'Lorem ipsum dolor sit amet consectetur.\nCras sodales imperdiet auctor.'
+    )
     text.move(16, 32)
 
     // const textInRect = draw.text(function (add) {
@@ -44,10 +60,13 @@ export default {
     //   console.log(x.width(), x.size())
     // })
 
-    const textInRect = draw.text('Power by Olaclick')
+    const textInRect = draw
+      .text('Power by Olaclick')
       .center(400, 460)
       .font({ fill: '#f06', family: 'Miso', size: '16' })
-    const rect2 = draw.rect(textInRect.length() + 10, 20).attr({ fill: '#c087d9' })
+    const rect2 = draw
+      .rect(textInRect.length() + 10, 20)
+      .attr({ fill: '#c087d9' })
     rect2.center(400, 460).radius(4, 4).backward()
 
     // image.size(100, 100).move(20, 20)
@@ -56,5 +75,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>
