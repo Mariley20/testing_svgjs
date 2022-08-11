@@ -1,15 +1,15 @@
 <template>
-<v-container>
+<v-container fluid>
 <v-row>
   <v-col cols="2">
 <!--  -->
   </v-col>
-  <v-col cols="3">
+  <v-col cols="4">
     <TextEditor />
   </v-col>
-  <v-col cols="7">
+  <v-col cols="6">
   <div>
-    <Brand07 />
+    <Brand7A />
   </div>
 
   </v-col>
@@ -18,12 +18,12 @@
 </template>
 
 <script>
-import Brand07 from '@/components/Brand07.vue'
+import Brand7A from '@/components/Brand7A.vue'
 import TextEditor from '@/components/TextEditor.vue'
 
 export default {
   components: {
-    Brand07, TextEditor
+    Brand7A, TextEditor
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="brando-7"></div>
+    <div id="brand7A"></div>
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
     // const rect = draw.rect(100, 100).attr({ fill: '#f06' })
   },
   mounted () {
-    const svgElement = document.getElementById('brando-7')
+    const svgElement = document.getElementById('brand7A')
     const draw = SVG().addTo(svgElement).size(500, 500)
     const rect = draw.rect('100%', '100%').attr({ fill: '#c087d9' })
     // const path = draw.path('M 0,333 0,500 500,500 500,166 250,280 Z')
